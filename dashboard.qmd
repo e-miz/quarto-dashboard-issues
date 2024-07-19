@@ -1,0 +1,47 @@
+---
+title: "Test Dashboard"
+author:
+  - name: John Doe
+    orcid: 0000-0000-0000-0000
+    affilifation:
+        name: My Institution
+  - name: Jane Doe
+    orcid: 0000-0000-0000-0001
+    affilifation:
+        name: My Institution
+bibliography: references.bib
+csl: american-physical-society.csl
+css: extra.scss
+format: dashboard
+include-after-body: 
+- text : |
+    <script type="text/javascript">
+    // hack to fix formatting of references; may be csl-dependent
+    const nodes = document.querySelectorAll('[class*="csl"]');
+
+    for (const node of nodes) {
+      node.classList.remove('html-fill-container');
+      node.classList.remove('html-fill-item');
+      }
+    </script>
+---
+
+##
+::: {.card title="Card 1"}
+::: {#fig-test-plot}
+{{< embed test.ipynb#test-plot >}}
+
+Directly embed outputs from code and/or notebook cells!
+:::
+
+Test Citation @1933Zwicky @marcus2016 @1970Rubin
+:::
+
+## 
+
+::: {.card title="References"}
+
+::: {#refs}
+:::
+
+:::
